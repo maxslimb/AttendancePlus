@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/button1.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/call_rejection_back_button.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/edittextborder.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/ic_baseline_account_circle_240.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/ic_rectangle_26.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/ic_sign_out.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/item_selected.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/login_screen_button.xml" value="0.171875" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/my_account.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/myaccount_save.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/navigationbar_home.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/navigationbar_profile.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/pen.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/profilepic_circular.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/drawable/roundedbutton3.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_launch_screen.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_student.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_student_my_account.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_student_sign_up.xml" value="0.1" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_teacher_my_account.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/kpate/AndroidStudioProjects/AttendancePlus/app/src/main/res/layout/activity_teacher_sign_up.xml" value="0.17083333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

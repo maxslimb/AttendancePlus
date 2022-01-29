@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student_MyAccount">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/call_rejection_back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/myac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="4dp"
+                android:text="My Account"
+                android:textSize="30dp"
+                android:textColor="#52ACFF"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/nameteacher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/edittextborder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/myac"
+                android:hint="Name"
+                android:importantForAutofill="auto"
+                android:inputType="textPersonName" />
+            <ImageView
+                android:id="@+id/pen1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/pen"
+                app:layout_constraintBottom_toBottomOf="@+id/nameteacher"
+                app:layout_constraintEnd_toEndOf="@+id/nameteacher"
+                app:layout_constraintTop_toTopOf="@id/nameteacher" />
+
+            <EditText
+                android:id="@+id/emailteacher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/edittextborder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameteacher"
+                android:hint="Email Address"
+                android:inputType="textWebEmailAddress" />
+            <ImageView
+                android:id="@+id/pen2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/pen"
+                app:layout_constraintBottom_toBottomOf="@+id/emailteacher"
+                app:layout_constraintEnd_toEndOf="@+id/emailteacher"
+                app:layout_constraintTop_toTopOf="@id/emailteacher" />
+
+            <EditText
+                android:id="@+id/deptteacher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/edittextborder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailteacher"
+                android:hint="Admission Number"
+                android:inputType="date" />
+
+            <ImageView
+                android:id="@+id/dobicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/pen"
+                app:layout_constraintBottom_toBottomOf="@+id/deptteacher"
+                app:layout_constraintEnd_toEndOf="@+id/deptteacher"
+                app:layout_constraintTop_toTopOf="@id/deptteacher" />
+
+            <EditText
+                android:id="@+id/yearteacher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/edittextborder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deptteacher"
+                android:hint="Class"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/pen3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/pen"
+                app:layout_constraintBottom_toBottomOf="@+id/yearteacher"
+                app:layout_constraintEnd_toEndOf="@+id/yearteacher"
+                app:layout_constraintTop_toTopOf="@id/yearteacher" />
+
+            <EditText
+                android:id="@+id/divteacher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/edittextborder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yearteacher"
+                android:hint="Division"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/pen4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/pen"
+                app:layout_constraintBottom_toBottomOf="@+id/divteacher"
+                app:layout_constraintEnd_toEndOf="@+id/divteacher"
+                app:layout_constraintTop_toTopOf="@id/divteacher" />
+
+
+
+            <ImageButton
+                android:id="@+id/save"
+                android:layout_width="99dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="28dp"
+                android:background="@drawable/roundedbutton3"
+                android:src="@drawable/myaccount_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divteacher"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
