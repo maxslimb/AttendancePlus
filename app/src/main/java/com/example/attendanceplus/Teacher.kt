@@ -50,23 +50,24 @@ class Teacher : AppCompatActivity() {
         val advertisingOptions = AdvertisingOptions.Builder().setStrategy(Strategy.P2P_STAR).build()
         Nearby.getConnectionsClient(applicationContext)
             .startAdvertising(
-                "teacher_Kishan", SERVICE_ID, connectionLifecycleCallback, advertisingOptions
+                "teacher_Kishan", SERVICE_ID, connectionLifecycleCallback, advertisingOptions   //change first param to name of Teacher
             )
             .addOnSuccessListener(
                 OnSuccessListener { unused: Void? ->
-
+                    Toast.makeText(applicationContext,"Ready to Take Attendance",Toast.LENGTH_SHORT).show()
                     Log.d("Teacher","Advertising success")
 
                 })
             .addOnFailureListener(
                 OnFailureListener { e: Exception? ->
                     Log.d("Teacher","Advertising fail: ${e.toString()}")
+                    Toast.makeText(applicationContext,"Error Initialising: ${e.toString()}",Toast.LENGTH_SHORT).show()
                 })
     }
 
     private val payloadCallback: PayloadCallback = object : PayloadCallback() {
         override fun onPayloadReceived(endpointId: String, payload: Payload) {
-            data_s.add(attendance("",""))
+           // data_s.add(attendance("",""))
             val data_recieved = payload.asBytes()?.let { String(it, Charsets.UTF_8) }
             Log.d("Teacher","Data recieved: ${payload.asBytes()?.let { String(it, Charsets.UTF_8) }}")
             Log.d("Teacher","Data recieved - name: ${data_recieved!!.substring(0,
@@ -81,6 +82,9 @@ class Teacher : AppCompatActivity() {
             Toast.makeText(applicationContext,"Data recieved - roll: ${
                 data_recieved.substring(
                 data_recieved.indexOf(",")+1)}",Toast.LENGTH_SHORT).show()
+
+            val data = Payload.fromBytes("Success".toByteArray())
+            Nearby.getConnectionsClient(applicationContext).sendPayload(endpointId, data)
         }
 
         override fun onPayloadTransferUpdate(endpointId: String, update: PayloadTransferUpdate) {

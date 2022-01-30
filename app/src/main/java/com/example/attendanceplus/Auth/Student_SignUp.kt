@@ -23,7 +23,7 @@ class Student_SignUp : AppCompatActivity() {
         val submit_userinfo = findViewById<ImageButton>(R.id.submit_userinfo)
         val sname = findViewById<TextInputEditText>(R.id.sname)
         val semail = findViewById<TextInputEditText>(R.id.semail)
-        val idno = findViewById<TextInputEditText>(R.id.idno)
+        val rollno = findViewById<TextInputEditText>(R.id.roll_no)
         val seco1 = findViewById<TextInputEditText>(R.id.seco1)
         val iname = findViewById<TextInputEditText>(R.id.iname)
         val division1 = findViewById<TextInputEditText>(R.id.division1)
@@ -39,15 +39,15 @@ class Student_SignUp : AppCompatActivity() {
         }
         submit_userinfo.setOnClickListener{
             if ((sname.text.toString().isNotEmpty()) && (semail.text.toString().isNotEmpty()) &&
-                (idno.text.toString().isNotEmpty()) && (iname.text.toString().isNotEmpty()) &&
+                (rollno.text.toString().isNotEmpty()) && (iname.text.toString().isNotEmpty()) &&
                 (division1.text.toString().isNotEmpty()) && (seco1.text.toString().isNotEmpty()) &&
                 (pass1.text.toString().isNotEmpty()) && (repass1.text.toString().isNotEmpty())
             ) {
-                if ((pass1.text.toString() == repass1.text.toString())&&(jsonObject.optString(idno.text.toString().toUpperCase())==seco1.text.toString())){
+                if ((pass1.text.toString() == repass1.text.toString())&&seco1.text.toString() == "111"){   //&&(jsonObject.optString(rollno.text.toString().toUpperCase())==seco1.text.toString())
                     val editor: SharedPreferences.Editor= sharedPreferences.edit()
                     editor.putString("name", sname.text.toString())
                     editor.putString("email", semail.text.toString())
-                    editor.putString("admin-no",idno.text.toString())
+                    editor.putString("admin-no",rollno.text.toString())
                     editor.putString("Class",iname.text.toString().toUpperCase())
                     editor.putString("division",division1.text.toString())
                     editor.putString("secret-code",seco1.text.toString())
@@ -57,8 +57,8 @@ class Student_SignUp : AppCompatActivity() {
                     startActivity(Intent(this,MainActivity::class.java))
                     Toast.makeText(applicationContext,"Welcome to Attendance Plus!",Toast.LENGTH_SHORT).show()
                 }
-                else if(jsonObject.optString(idno.text.toString())!=seco1.text.toString()){
-                    Log.e("upper",idno.text.toString().toUpperCase())
+                else if(seco1.text.toString()!="111"){
+
                     Toast.makeText(applicationContext,"Secret Code is not valid",Toast.LENGTH_SHORT).show()
                 }
                 else{

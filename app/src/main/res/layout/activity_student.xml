@@ -6,11 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Student">
 
-    <Button
-        android:id="@+id/giveattendance_button"
+    <TextView
+        android:id="@+id/Student_a_info_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Give Attendance"
+        android:text="Processing Your Attendance\nPlease Wait\n Don't Exit this App"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="45dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/Student_a_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
