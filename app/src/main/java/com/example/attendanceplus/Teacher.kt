@@ -25,7 +25,7 @@ class Teacher : AppCompatActivity() {
     lateinit var TextView_progress: TextView
     lateinit var stop_attendance_button: Button
     lateinit var add_student_button: Button
-
+    lateinit var  recycler: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teacher)
@@ -43,7 +43,7 @@ class Teacher : AppCompatActivity() {
            // implement "bottom navigation sheet"
         }
 
-        val recycler = findViewById<RecyclerView>(R.id.recyclerview_attendance)
+         recycler = findViewById<RecyclerView>(R.id.recyclerview_attendance)
         recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true)
         recycler.adapter = AttendanceListAdapter(data_s)
 
@@ -81,7 +81,7 @@ class Teacher : AppCompatActivity() {
 
     private val payloadCallback: PayloadCallback = object : PayloadCallback() {
         override fun onPayloadReceived(endpointId: String, payload: Payload) {
-           // data_s.add(attendance("",""))
+
             val data_recieved = payload.asBytes()?.let { String(it, Charsets.UTF_8) }
             Log.d("Teacher","Data recieved: ${payload.asBytes()?.let { String(it, Charsets.UTF_8) }}")
             Log.d("Teacher","Data recieved - name: ${data_recieved!!.substring(0,
@@ -90,6 +90,10 @@ class Teacher : AppCompatActivity() {
                 data_recieved.substring(
                     data_recieved.indexOf(",")+1)}")
 
+            data_s.add(attendance(data_recieved!!.substring(0,
+                data_recieved.indexOf(",")),data_recieved.substring(
+                data_recieved.indexOf(",")+1)))
+            recycler.adapter!!.notifyDataSetChanged()
             Toast.makeText(applicationContext,"Data recieved: ${payload.asBytes()?.let { String(it, Charsets.UTF_8) }}",Toast.LENGTH_SHORT).show()
             Toast.makeText(applicationContext,"Data recieved - name: ${data_recieved!!.substring(0,
                 data_recieved.indexOf(","))}",Toast.LENGTH_SHORT).show()
