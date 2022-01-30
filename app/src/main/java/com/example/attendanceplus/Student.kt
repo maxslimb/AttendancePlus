@@ -44,7 +44,7 @@ class Student : AppCompatActivity() {
             override fun onEndpointFound(endpointId: String, info: DiscoveredEndpointInfo) {
                 // An endpoint was found. We request a connection to it.
                 Nearby.getConnectionsClient(applicationContext)
-                    .requestConnection("teacher_Kishan", endpointId, connectionLifecycleCallback)
+                    .requestConnection("teacher_Kishan", endpointId, connectionLifecycleCallback) //change to faulty name- first param
                     .addOnSuccessListener(
                         OnSuccessListener { unused: Void? -> })
                     .addOnFailureListener(
@@ -80,7 +80,7 @@ class Student : AppCompatActivity() {
                         Nearby.getConnectionsClient(applicationContext).stopDiscovery();
                         // if you were advertising, you can stop as well
                         Toast.makeText(applicationContext,"EndID of Student: $endpointId", Toast.LENGTH_SHORT).show()
-                        val data = Payload.fromBytes("Kishan Patel - 2018HE0269".toByteArray())
+                        val data = Payload.fromBytes("Kishan Patel,35".toByteArray())
                         Nearby.getConnectionsClient(applicationContext).sendPayload(endpointId, data)
 
                       //  friendEndpointId = endpointId
