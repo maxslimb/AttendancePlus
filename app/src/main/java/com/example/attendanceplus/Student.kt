@@ -38,67 +38,11 @@ class Student : AppCompatActivity() {
         setContentView(R.layout.activity_student)
         ProgressBar_Student = findViewById(R.id.Student_a_progressBar)
 
-        Dexter.withContext(applicationContext)
-            .withPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
-            .withListener(object : PermissionListener, MultiplePermissionsListener {
-                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+    }
 
-                }
-
-                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
-
-                }
-
-                override fun onPermissionRationaleShouldBeShown(
-                    p0: PermissionRequest?,
-                    p1: PermissionToken?
-                ) {
-
-                }
-
-                override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {
-                }
-
-                override fun onPermissionRationaleShouldBeShown(
-                    p0: MutableList<PermissionRequest>?,
-                    p1: PermissionToken?
-                ) {
-
-                }
-
-            })
-            .check();
-        val locationRequest = LocationRequest.create().apply {
-            interval = 10000
-            fastestInterval = 5000
-            priority = LocationRequest.PRIORITY_LOW_POWER
-        }
-
-        val builder = LocationSettingsRequest.Builder()
-            .addLocationRequest(locationRequest)
-        val client: SettingsClient = LocationServices.getSettingsClient(this)
-        val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
-        task.addOnSuccessListener {
-            startDiscovery()
-
-        }
-
-        task.addOnFailureListener { exception ->
-            if (exception is ResolvableApiException){
-                // Location settings are not satisfied, but this can be fixed
-                // by showing the user a dialog.
-                try {
-                    // Show the dialog by calling startResolutionForResult(),
-                    // and check the result in onActivityResult().
-                    val REQUEST_CHECK_SETTINGS =1
-                    exception.startResolutionForResult(this@Student,
-                        REQUEST_CHECK_SETTINGS)
-                } catch (sendEx: IntentSender.SendIntentException) {
-                    // Ignore the error.
-                }
-            }
-        }
-
+    override fun onStart() {
+        super.onStart()
+        startDiscovery()
     }
 
     private fun startDiscovery() {

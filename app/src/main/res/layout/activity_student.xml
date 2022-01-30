@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Processing Your Attendance\nPlease Wait\n Don't Exit this App"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_200"
         android:textSize="20sp"
         android:layout_marginTop="45dp"
         android:textStyle="italic"

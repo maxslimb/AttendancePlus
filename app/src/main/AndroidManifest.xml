@@ -31,7 +31,13 @@
             android:exported="true" />
         <activity
             android:name=".Launch_Screen"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Auth.Teacher_SignUp"
             android:exported="true" />
@@ -47,11 +53,7 @@
         <activity
             android:name=".Teacher"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

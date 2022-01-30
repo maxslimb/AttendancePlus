@@ -1,9 +1,13 @@
 package com.example.attendanceplus
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,21 +21,26 @@ import com.google.android.gms.nearby.connection.Payload
 
 class Teacher : AppCompatActivity() {
     val data_s = arrayListOf<attendance>()
+    lateinit var progressBar: ProgressBar
+    lateinit var TextView_progress: TextView
+    lateinit var stop_attendance_button: Button
+    lateinit var add_student_button: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teacher)
 
-        val stop_attendance_button = findViewById<Button>(R.id.stop_attendance)
-        val add_student_button = findViewById<Button>(R.id.add_student)
-
-
+         stop_attendance_button = findViewById<Button>(R.id.stop_attendance)
+         add_student_button = findViewById<Button>(R.id.add_student)
+        progressBar = findViewById(R.id.Teacher_a_progressBar)
+        TextView_progress = findViewById(R.id.textView_info_1)
         stop_attendance_button.setOnClickListener {
             Nearby.getConnectionsClient(applicationContext).stopAdvertising()
             startActivity(Intent(this, MainActivity::class.java))
         }
 
         add_student_button.setOnClickListener {
-            TODO("bottom navigation sheet")
+           // implement "bottom navigation sheet"
         }
 
         val recycler = findViewById<RecyclerView>(R.id.recyclerview_attendance)
@@ -45,6 +54,7 @@ class Teacher : AppCompatActivity() {
         startAdvertising()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun startAdvertising() {
         val SERVICE_ID = "com.example.attendanceplus"
         val advertisingOptions = AdvertisingOptions.Builder().setStrategy(Strategy.P2P_STAR).build()
@@ -54,6 +64,10 @@ class Teacher : AppCompatActivity() {
             )
             .addOnSuccessListener(
                 OnSuccessListener { unused: Void? ->
+                    progressBar.visibility = View.GONE
+                    stop_attendance_button.visibility = View.VISIBLE
+                    add_student_button.visibility = View.VISIBLE
+                    TextView_progress.text = "Ready to Take Attendance!"
                     Toast.makeText(applicationContext,"Ready to Take Attendance",Toast.LENGTH_SHORT).show()
                     Log.d("Teacher","Advertising success")
 

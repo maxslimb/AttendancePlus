@@ -10,10 +10,10 @@
         android:id="@+id/textView_info_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_200"
         android:textSize="20sp"
         android:layout_marginTop="45dp"
-        android:text="The App is taking Attendance"
+        android:text="Please Wait, Initialising Attendance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Student"
+        android:visibility="gone"
         android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toTopOf="@+id/stop_attendance"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,12 +45,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stop Attendance"
+        android:visibility="gone"
         android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
+    <ProgressBar
+        android:id="@+id/Teacher_a_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
