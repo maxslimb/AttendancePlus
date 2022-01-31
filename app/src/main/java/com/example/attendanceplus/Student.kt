@@ -1,8 +1,10 @@
 package com.example.attendanceplus
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.ProgressBar
@@ -32,10 +34,11 @@ import com.karumi.dexter.listener.single.PermissionListener
 
 class Student : AppCompatActivity() {
    lateinit var ProgressBar_Student: ProgressBar
-
+    lateinit var sharedPreferences:SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student)
+        sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         ProgressBar_Student = findViewById(R.id.Student_a_progressBar)
 
     }
@@ -105,7 +108,7 @@ class Student : AppCompatActivity() {
                         Nearby.getConnectionsClient(applicationContext).stopDiscovery();
                         // if you were advertising, you can stop as well
                         Toast.makeText(applicationContext,"EndID of Student: $endpointId", Toast.LENGTH_SHORT).show()
-                        val data = Payload.fromBytes("Kishan Patel,35".toByteArray())   //change to student name and roll no dynamic
+                        val data = Payload.fromBytes("${sharedPreferences.getString("name","")},${sharedPreferences.getString("admin-no","")}".toByteArray())
                         Nearby.getConnectionsClient(applicationContext).sendPayload(endpointId, data)
 
                       //  friendEndpointId = endpointId
