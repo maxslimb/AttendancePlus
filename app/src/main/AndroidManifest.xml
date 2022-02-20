@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendancePlus">
         <activity
+            android:name=".Summary_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Teacher_MyAccount"
             android:exported="true" />
         <activity
@@ -31,7 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".Launch_Screen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,9 +55,7 @@
             android:exported="true" />
         <activity
             android:name=".Teacher"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
