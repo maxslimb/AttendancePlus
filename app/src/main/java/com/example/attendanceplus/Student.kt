@@ -105,12 +105,12 @@ class Student : AppCompatActivity() {
                     ConnectionsStatusCodes.STATUS_OK -> {
                         // Once you have successfully connected to your friends' devices, you can leave
                         // discovery mode so you can stop discovering other devices
-                        Nearby.getConnectionsClient(applicationContext).stopDiscovery();
+
                         // if you were advertising, you can stop as well
                         Toast.makeText(applicationContext,"EndID of Student: $endpointId", Toast.LENGTH_SHORT).show()
                         val data = Payload.fromBytes("${sharedPreferences.getString("name","")},${sharedPreferences.getString("admin-no","")}".toByteArray())
                         Nearby.getConnectionsClient(applicationContext).sendPayload(endpointId, data)
-
+                        Nearby.getConnectionsClient(applicationContext).stopDiscovery()
                       //  friendEndpointId = endpointId
 
                     }

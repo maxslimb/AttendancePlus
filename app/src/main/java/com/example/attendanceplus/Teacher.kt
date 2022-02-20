@@ -43,8 +43,8 @@ class Teacher : AppCompatActivity() {
            // implement "bottom navigation sheet"
         }
 
-         recycler = findViewById<RecyclerView>(R.id.recyclerview_attendance)
-        recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true)
+         recycler = findViewById(R.id.recyclerview_attendance)
+        recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         recycler.adapter = AttendanceListAdapter(data_s)
 
     }
@@ -93,7 +93,8 @@ class Teacher : AppCompatActivity() {
             data_s.add(attendance(data_recieved!!.substring(0,
                 data_recieved.indexOf(",")),data_recieved.substring(
                 data_recieved.indexOf(",")+1)))
-            recycler.adapter!!.notifyDataSetChanged()
+            Log.d("Teacher","Data-s arrayList: $data_s")
+            runOnUiThread { recycler.adapter!!.notifyDataSetChanged() }
             Toast.makeText(applicationContext,"Data recieved: ${payload.asBytes()?.let { String(it, Charsets.UTF_8) }}",Toast.LENGTH_SHORT).show()
             Toast.makeText(applicationContext,"Data recieved - name: ${data_recieved!!.substring(0,
                 data_recieved.indexOf(","))}",Toast.LENGTH_SHORT).show()
@@ -120,7 +121,7 @@ class Teacher : AppCompatActivity() {
             override fun onConnectionResult(endpointId: String, result: ConnectionResolution) {
                 when (result.status.statusCode) {
                     ConnectionsStatusCodes.STATUS_OK -> {
-                        Nearby.getConnectionsClient(applicationContext).stopAdvertising()
+                       // Nearby.getConnectionsClient(applicationContext).stopAdvertising()
 
                         Toast.makeText(applicationContext,"EndID of Student: $endpointId",Toast.LENGTH_SHORT).show()
                     }
