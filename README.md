@@ -1,7 +1,7 @@
 ## Attendance Plus
 
 ### **Welcome 👋**
-This project is about how to take attendance using Wifi / Hotspot. This project is a WiFi and Wifi Hostpot based attendance system for colleges. The gist of the project is to enable teachers to mark students present, without having to waste time in roll calls.
+This project is about how to take attendance using Wifi / Hotspot. This project is a WiFi and Wifi Hostpot based attendance system for colleges. This project helps teachers to mark students present, without having to waste time in roll calls.
 
 The app has two modes: One for the teacher and the other for the students. The Teacher shares a unique code with students which is the Wfif Hotspot Key.
 
