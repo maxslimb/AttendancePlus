@@ -10,5 +10,3 @@ The Students Then enter the given key/password and connects to the Wifi netwrok 
 Every time the teacher takes attendence, his/her phone creates a wifi hotspot using localonlyhotspot method which each student's device connects to. Once connected, the device broadcasts it's details, and on a succcessful confirmation, disconnects.
 
 This project has been updated with modern UI Design, and now it also stores the attendance of the students. Feel free to fork this repository and add new features!
-
-Working in Android 10!
